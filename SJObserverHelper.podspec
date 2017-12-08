@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SJObserverHelper"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "The observer assistant, if you forget to remove, the assistant will automatically remove it."
 
   # This description is used to generate tags and improve search results.

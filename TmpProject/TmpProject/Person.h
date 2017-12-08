@@ -1,5 +1,5 @@
 //
-//  NSObject+SJObserverHelper.h
+//  Person.h
 //  TmpProject
 //
 //  Created by BlueDancer on 2017/12/8.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (SJObserverHelper)
+@interface Person : NSObject
 
-- (void)sj_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath;
+@property (nonatomic, strong) NSString *name;
 
 @end

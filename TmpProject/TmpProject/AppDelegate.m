@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  ObserverDemo
+//  TmpProject
 //
-//  Created by BlueDancer on 2017/11/7.
-//  Copyright © 2017年 BlueDancer. All rights reserved.
+//  Created by BlueDancer on 2017/12/8.
+//  Copyright © 2017年 SanJiang. All rights reserved.
 //
 
 #import "AppDelegate.h"
