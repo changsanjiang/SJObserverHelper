@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SJObserverHelper"
-  s.version      = "1.0.1"
-  s.summary      = "The observer assistant, if you forget to remove, the assistant will automatically remove it."
+  s.version      = "1.0.2"
+  s.summary      = "Automatic removal of the observer."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-The observer assistant, if you forget to remove, the assistant will automatically remove it. 观察者助手, 如果你忘记移除, 则助手会自动将其移除.
+    Call the specified method to automatically remove the observer. 调用指定方法, 自动移除观察者.
                    DESC
 
   s.homepage     = "https://github.com/changsanjiang/SJObserverHelper"

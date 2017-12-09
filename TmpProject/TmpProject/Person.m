@@ -14,7 +14,4 @@
     NSLog(@"%zd - %s", __LINE__, __func__);
 }
 
-- (NSString *)description {
-    return _name;
-}
 @end

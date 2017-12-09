@@ -17,6 +17,7 @@
 		77067AB21FDACF4C00573772 /* Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77067AB11FDACF4C00573772 /* Observer.m */; };
 		77067ABC1FDAD8C800573772 /* NSObject+SJObserverHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77067ABB1FDAD8C800573772 /* NSObject+SJObserverHelper.m */; };
 		77067ABE1FDAD8D200573772 /* SJObserverHelper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 77067ABD1FDAD8D200573772 /* SJObserverHelper.podspec */; };
+		77067AC01FDB9C4800573772 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 77067ABF1FDB9C4800573772 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		77067ABA1FDAD8C800573772 /* NSObject+SJObserverHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SJObserverHelper.h"; sourceTree = "<group>"; };
 		77067ABB1FDAD8C800573772 /* NSObject+SJObserverHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SJObserverHelper.m"; sourceTree = "<group>"; };
 		77067ABD1FDAD8D200573772 /* SJObserverHelper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SJObserverHelper.podspec; path = ../SJObserverHelper.podspec; sourceTree = "<group>"; };
+		77067ABF1FDB9C4800573772 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				77067ABD1FDAD8D200573772 /* SJObserverHelper.podspec */,
+				77067ABF1FDB9C4800573772 /* README.md */,
 				77067A961FDACF3200573772 /* TmpProject */,
 				77067A951FDACF3200573772 /* Products */,
 			);
@@ -158,6 +161,7 @@
 			files = (
 				77067AA41FDACF3200573772 /* LaunchScreen.storyboard in Resources */,
 				77067ABE1FDAD8D200573772 /* SJObserverHelper.podspec in Resources */,
+				77067AC01FDB9C4800573772 /* README.md in Resources */,
 				77067AA11FDACF3200573772 /* Assets.xcassets in Resources */,
 				77067A9F1FDACF3200573772 /* Main.storyboard in Resources */,
 			);

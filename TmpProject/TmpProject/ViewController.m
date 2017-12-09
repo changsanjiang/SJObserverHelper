@@ -20,6 +20,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,6 +48,7 @@
 - (IBAction)createP:(id)sender {
     NSLog(@"%zd - %s", __LINE__, __func__);
     _xiaoM = [Person new];
+    NSLog(@"%@", _xiaoM);
 }
 - (IBAction)createO:(id)sender {
     NSLog(@"%zd - %s", __LINE__, __func__);
