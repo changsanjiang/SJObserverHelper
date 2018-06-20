@@ -11,7 +11,7 @@
 @implementation Observer
 
 - (void)dealloc {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     NSLog(@"%@", object);

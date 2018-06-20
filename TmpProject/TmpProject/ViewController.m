@@ -29,29 +29,31 @@
 }
 
 - (IBAction)added:(id)sender {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    if ( !_xiaoM ) [self createP:nil];
+    if ( !_observer ) [self createO:nil];
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
     [_xiaoM sj_addObserver:_observer forKeyPath:@"name"];
 }
 
 - (IBAction)change:(id)sender {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
     _xiaoM.name = @"dsf";
 }
 - (IBAction)personnil:(id)sender {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
     _xiaoM = nil;
 }
 - (IBAction)observernil:(id)sender {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
     _observer = nil;
 }
 - (IBAction)createP:(id)sender {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
     _xiaoM = [Person new];
     NSLog(@"%@", _xiaoM);
 }
 - (IBAction)createO:(id)sender {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
     _observer = [Observer new];
 }
 
