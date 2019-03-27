@@ -9,9 +9,18 @@
 #import "Person.h"
 
 @implementation Person
++ (void)test {
+
+}
+
++ (void)test2:(NSString *)str {
+    
+}
 
 - (void)dealloc {
-    NSLog(@"%zd - %s", __LINE__, __func__);
+#ifdef DEBUG
+    NSLog(@"%d - %s", (int)__LINE__, __func__);
+#endif
 }
 
 @end

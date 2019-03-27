@@ -18,6 +18,7 @@
 		77067ABC1FDAD8C800573772 /* NSObject+SJObserverHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77067ABB1FDAD8C800573772 /* NSObject+SJObserverHelper.m */; };
 		77067ABE1FDAD8D200573772 /* SJObserverHelper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 77067ABD1FDAD8D200573772 /* SJObserverHelper.podspec */; };
 		77067AC01FDB9C4800573772 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 77067ABF1FDB9C4800573772 /* README.md */; };
+		77FC54D8224B652600CFE03C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FC54D7224B652600CFE03C /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		77067ABB1FDAD8C800573772 /* NSObject+SJObserverHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SJObserverHelper.m"; sourceTree = "<group>"; };
 		77067ABD1FDAD8D200573772 /* SJObserverHelper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SJObserverHelper.podspec; path = ../SJObserverHelper.podspec; sourceTree = "<group>"; };
 		77067ABF1FDB9C4800573772 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		77FC54D6224B652600CFE03C /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		77FC54D7224B652600CFE03C /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				77067A981FDACF3200573772 /* AppDelegate.m */,
 				77067A9A1FDACF3200573772 /* ViewController.h */,
 				77067A9B1FDACF3200573772 /* ViewController.m */,
+				77FC54D6224B652600CFE03C /* TestViewController.h */,
+				77FC54D7224B652600CFE03C /* TestViewController.m */,
 				77067AB91FDAD8C800573772 /* Classes */,
 				77067AAD1FDACF4700573772 /* Person.h */,
 				77067AAE1FDACF4700573772 /* Person.m */,
@@ -176,6 +181,7 @@
 			files = (
 				77067A9C1FDACF3200573772 /* ViewController.m in Sources */,
 				77067AA71FDACF3200573772 /* main.m in Sources */,
+				77FC54D8224B652600CFE03C /* TestViewController.m in Sources */,
 				77067AB21FDACF4C00573772 /* Observer.m in Sources */,
 				77067AAF1FDACF4700573772 /* Person.m in Sources */,
 				77067ABC1FDAD8C800573772 /* NSObject+SJObserverHelper.m in Sources */,

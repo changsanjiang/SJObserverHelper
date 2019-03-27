@@ -10,6 +10,8 @@
 #import "Person.h"
 #import "Observer.h"
 #import "NSObject+SJObserverHelper.h"
+#import <objc/message.h>
+#import "TestViewController.h"
 
 @interface ViewController ()
 
@@ -23,8 +25,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    Person *x1 = [Person new];
     
-    // Do any additional setup after loading the view, typically from a nib.
+    x1.name = @"san";
+    x1.name = @"san2";
+
+    sjkvo_observe(x1, @"name", ^(id  _Nonnull target, NSDictionary<NSKeyValueChangeKey,id> * _Nullable change) {
+        NSLog(@"观察者1号: %@", change);
+    });
+    
+    sjkvo_observe(x1, @"name", ^(id  _Nonnull target, NSDictionary<NSKeyValueChangeKey,id> * _Nullable change) {
+        NSLog(@"观察者2号: %@", change);
+    });
+    
+    x1.name = @"a";
+    x1.name = @"b";
+    x1.name = @"c";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (IBAction)test:(id)sender {
+    [self presentViewController:[TestViewController new] animated:YES completion:nil];
 }
 
 - (IBAction)added:(id)sender {

@@ -10,6 +10,10 @@
 
 @interface Person : NSObject
 
++ (void)test;
+
++ (void)test2:(NSString *)str;
+
 @property (nonatomic, strong) NSString *name;
 
 @end
