@@ -35,13 +35,18 @@
         NSLog(@"观察者1号: %@", change);
     });
     
-    sjkvo_observe(x1, @"name", ^(id  _Nonnull target, NSDictionary<NSKeyValueChangeKey,id> * _Nullable change) {
+    NSInteger identifier2 = sjkvo_observe(x1, @"name", ^(id  _Nonnull target, NSDictionary<NSKeyValueChangeKey,id> * _Nullable change) {
         NSLog(@"观察者2号: %@", change);
     });
     
     x1.name = @"a";
     x1.name = @"b";
     x1.name = @"c";
+    
+    sjkvo_remove(x1, identifier2);
+    
+    x1.name = @"d";
+    x1.name = @"e";
 }
 
 - (void)viewWillAppear:(BOOL)animated {

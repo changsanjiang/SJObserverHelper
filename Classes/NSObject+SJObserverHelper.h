@@ -16,6 +16,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^SJDeallockCallbackTask)(id obj);
+typedef void(^SJKVOObservedChangeHandler)(id target, NSDictionary<NSKeyValueChangeKey,id> *_Nullable change);
+typedef NSInteger SJKVOObserverToken;
+
+/// - KVO -
+/// Add Observer (autoremove) [target, keyPath, change]
+extern SJKVOObserverToken
+sjkvo_observe(id target, NSString *keyPath, SJKVOObservedChangeHandler handler);
+
+/// Add Observer (autoremove) [target, keyPath, options, change]
+extern SJKVOObserverToken __attribute__((overloadable))
+sjkvo_observe(id target, NSString *keyPath, NSKeyValueObservingOptions options, SJKVOObservedChangeHandler handler);
+
+/// Remove Observer
+extern void
+sjkvo_remove(id target, SJKVOObserverToken token);
+
 
 /// - KVO -
 @interface NSObject (SJKVOHelper)
@@ -47,14 +63,4 @@ typedef void(^SJDeallockCallbackTask)(id obj);
 /// 添加一个任务, 当对象销毁时将会执行这些任务
 - (void)sj_addDeallocCallbackTask:(SJDeallockCallbackTask)callback;
 @end
-
-/// - KVO -
-typedef void(^SJKVOObservedChangeHandler)(id target, NSDictionary<NSKeyValueChangeKey,id> *_Nullable change);
-/// - target, keyPath, change
-extern void
-sjkvo_observe(id target, NSString *keyPath, SJKVOObservedChangeHandler handler);
-
-/// - target, keyPath, options, change
-extern void __attribute__((overloadable))
-sjkvo_observe(id target, NSString *keyPath, NSKeyValueObservingOptions options, SJKVOObservedChangeHandler handler);
 NS_ASSUME_NONNULL_END

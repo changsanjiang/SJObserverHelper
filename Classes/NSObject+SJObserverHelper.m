@@ -158,16 +158,22 @@ NS_ASSUME_NONNULL_BEGIN
 }
 @end
 
-void
+SJKVOObserverToken
 sjkvo_observe(id target, NSString *keyPath, SJKVOObservedChangeHandler handler) {
-    sjkvo_observe(target, keyPath, NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld, handler);
+    return sjkvo_observe(target, keyPath, NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld, handler);
 }
 
-void __attribute__((overloadable))
+SJKVOObserverToken __attribute__((overloadable))
 sjkvo_observe(id target, NSString *keyPath, NSKeyValueObservingOptions options, SJKVOObservedChangeHandler handler) {
     if ( !target )
-        return;
+        return 0;
     __SJKVOObserver *observer = [[__SJKVOObserver alloc] initWithTarget:target forKeyPath:keyPath options:options change:handler];
     objc_setAssociatedObject(target, &observer->_key, observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return (SJKVOObserverToken)&observer->_key;
+}
+
+void
+sjkvo_remove(id target, SJKVOObserverToken token) {
+    objc_setAssociatedObject(target, (void *)token, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 NS_ASSUME_NONNULL_END
