@@ -52,10 +52,12 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSString *hashstr = [NSString stringWithFormat:@"%lu-%@", (unsigned long)[observer hash], keyPath];
     
-    if ( [[self sj_observerhashSet] containsObject:hashstr] ) return;
-    else [[self sj_observerhashSet] addObject:hashstr];
+    @synchronized (self) {
+        if ( [[self sj_observerhashSet] containsObject:hashstr] ) return;
+        else [[self sj_observerhashSet] addObject:hashstr];
+    }
     
-    [self addObserver:observer forKeyPath:keyPath options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:context];
+    [self addObserver:observer forKeyPath:keyPath options:options context:context];
     
     __SJKVOAutoremove *helper = [__SJKVOAutoremove new];
     __SJKVOAutoremove *sub = [__SJKVOAutoremove new];
@@ -66,6 +68,15 @@ NS_ASSUME_NONNULL_BEGIN
     
     helper.factor = sub;
     sub.factor = helper;
+    
+    __weak typeof(self) _self = self;
+    [observer sj_addDeallocCallbackTask:^(id  _Nonnull obj) {
+        __strong typeof(_self) self = _self;
+        if ( !self ) return;
+        @synchronized (self) {
+            [[self sj_observerhashSet] removeObject:hashstr];
+        }
+    }];
     
     objc_setAssociatedObject(self, &helper->_key, helper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(observer, &sub->_key, sub, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
